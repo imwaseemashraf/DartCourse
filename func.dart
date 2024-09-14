@@ -65,4 +65,22 @@ void main() {
   }
 
   nested(10);
+
+  //First forEach Call:
+  //
+  // list.forEach(showNumber); directly passes the showNumber function as the callback.
+  // For each element in the list, the showNumber function is called with the current element as the argument.
+  // The function prints the corresponding message.
+  // Second forEach Call:
+  //
+  // list.forEach((value) => showNumber(value)); uses an anonymous arrow function as the callback.
+  // The arrow function takes a value as input and calls the showNumber function with that value.
+  // This is essentially equivalent to the first forEach call, as it performs the same operation.
+  void showNumber(int value) {
+    print("Number is $value");
+  }
+
+  List<int> list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  list.forEach(showNumber);
+  list.forEach((value) => showNumber(value));
 }
